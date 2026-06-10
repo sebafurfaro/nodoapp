@@ -24,3 +24,11 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.spotlight-overlay {
+  background: radial-gradient(
+    circle var(--spotlight-radius) at var(--spot-x) var(--spot-y),
+    rgba(0, 240, 255, var(--spotlight-opacity)),
+    transparent 70%
+  );
+}

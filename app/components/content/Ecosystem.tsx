@@ -1,0 +1,1 @@
+export const Ecosystem = () => <section id="ecosistema" className="h-screen"></section>

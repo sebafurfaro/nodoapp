@@ -1,0 +1,1 @@
+export const Contact = () => <section id="contacto" className="h-screen"></section>
