@@ -1,64 +1,142 @@
-import { CodeIcon, PaletteIcon, PanelsTopLeft, SquareStack } from "lucide-react"
-import Typography from "../Typography"
-import { SpotlightCard } from "../ui/SpotlightCard"
+"use client";
 
-export const Solutions = () => {
+import { Card } from "@heroui/react";
+import {
+  Code2,
+  Layers3,
+  MonitorSmartphone,
+  ShieldCheck,
+  Sparkles,
+} from "lucide-react";
+import { useRef } from "react";
+import { SpotlightCard } from "../ui/SpotlightCard";
+import { useGsapReveal } from "../ui/useGsapReveal";
+import { useSplitTextReveal } from "../ui/useSplitTextReveal";
 
-    const solutions = [
-        {
-            title: "Desarrollo a medida",
-            description: "Creamos soluciones personalizadas que se adaptan a las necesidades específicas de cada cliente, utilizando las últimas tecnologías y metodologías ágiles.",
-            image: <CodeIcon className="w-6 h-6" />,
-            position: "md:col-span-7",
-            color: "cyan"
-        },
-        {
-            title: "Diseño de interfaces",
-            description: "Diseñamos interfaces de usuario intuitivas y atractivas que mejoran la experiencia del usuario y aumentan la satisfacción del cliente.",
-            image: <PaletteIcon className="w-6 h-6" />,
-            position: "md:col-span-5",
-            color: "violet"
-        },
-        {
-            title: "Desarrollo a Web",
-            description: "Implementamos soluciones web escalables y seguras que permiten a nuestros clientes llegar a una audiencia global y mejorar su presencia en línea.",
-            image: <PanelsTopLeft className="w-6 h-6" />,
-            position: "md:col-span-5",
-            color: "rose"
-        },
-        {
-            title: "Registro de Marcas",
-            description: "Ofrecemos el servicio de asesoria y gestión de registro de marcas para proteger la identidad de tu negocio y asegurar que tu marca esté legalmente protegida en el mercado.",
-            image: <SquareStack className="w-6 h-6" />,
-            position: "md:col-span-7",
-            color: "amber"
-        }
-    ]
+const SOLUTIONS = [
+  {
+    title: "Desarrollo a medida",
+    description:
+      "Creamos productos digitales pensados para resolver problemas reales con una base tecnica solida y sostenible.",
+    icon: Code2,
+    tone: "cyan" as const,
+  },
+  {
+    title: "Interfaces de alto impacto",
+    description:
+      "Diseno visual moderno, accesible y enfocado en conversion, claridad y consistencia de marca.",
+    icon: Sparkles,
+    tone: "violet" as const,
+  },
+  {
+    title: "Plataformas web escalables",
+    description:
+      "Arquitecturas listas para crecer, con performance, modularidad y un flujo de mantenimiento simple.",
+    icon: MonitorSmartphone,
+    tone: "rose" as const,
+  },
+  {
+    title: "Consultoria y resguardo",
+    description:
+      "Acompanamos decisiones de producto, tecnologia y seguridad para cuidar cada etapa del proceso.",
+    icon: ShieldCheck,
+    tone: "amber" as const,
+  },
+];
 
-    return(
-        <section id="soluciones" className="h-screen flex flex-col items-center justify-center gap-8">
-            <div className="mx-auto w-full max-w-5xl px-4 md:px-8 text-center">
-                <Typography variant="h3" color="white">Nuestras soluciones</Typography>
-                <Typography variant="p" color="white">Ofrecemos un conjunto de soluciones innovadoras para satisfacer las necesidades de nuestros clientes. Los acompañamos desde la idea inicial hasta el despliegue de la solución. </Typography>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-8 w-full max-w-5xl mx-auto">
-                {solutions.map((solution, index) => (
-                    <SpotlightCard
-                        key={index}
-                        className={`col-span-1 ${solution.position} p-6`}
-                        contentClassName="flex flex-col items-start gap-4"
-                        spotlightTone={solution.color as "cyan" | "violet" | "rose" | "amber"}
-                        spotlightRadius={280}
-                        spotlightOpacity={0.2}
-                    >
-                        <div className="rounded-lg border border-white/30 p-4 flex items-center justify-center w-fit h-fit">
-                            {solution.image}
-                        </div>
-                        <Typography variant="h5" color="white">{solution.title}</Typography>
-                        <Typography variant="p" color="white">{solution.description}</Typography>
-                    </SpotlightCard>
-                ))}
-            </div>
-        </section>
-    )
+export function Solutions() {
+  const sectionRef = useRef<HTMLElement | null>(null);
+  const titleRef = useRef<HTMLHeadingElement | null>(null);
+  useSplitTextReveal(titleRef, sectionRef, {
+    start: "top 82%",
+    stagger: 0.05,
+    y: 26,
+    rotateX: 46,
+  });
+  useGsapReveal(sectionRef);
+
+  return (
+    <section
+      ref={sectionRef}
+      id="soluciones"
+      className="relative scroll-mt-28 border-t border-border bg-background px-4 py-20 text-foreground sm:px-6 lg:px-8"
+    >
+      <div className="mx-auto grid w-full max-w-7xl gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
+        <div className="space-y-5">
+          <p
+            data-reveal
+            className="inline-flex rounded-full border border-border bg-surface/70 px-4 py-2 text-xs font-semibold uppercase tracking-[0.28em] text-foreground/70"
+          >
+            Soluciones
+          </p>
+          <h2
+            ref={titleRef}
+            className="max-w-xl text-3xl font-bold tracking-[-0.04em] text-foreground sm:text-4xl lg:text-5xl"
+          >
+            Un ecosistema de servicios que acompana desde la idea hasta la
+            ejecucion.
+          </h2>
+          <p data-reveal className="max-w-xl text-base leading-7 text-foreground/70">
+            La experiencia de NodoApp se construye sobre una mezcla de estrategia,
+            diseno y desarrollo. Cada pieza esta pensada para que el producto
+            final se sienta rapido, claro y confiable.
+          </p>
+        </div>
+
+        <div className="grid gap-4 sm:grid-cols-2">
+          {SOLUTIONS.map((solution, index) => {
+            const Icon = solution.icon;
+
+            return (
+              <SpotlightCard
+                key={solution.title}
+                className="rounded-[1.5rem] border-border bg-surface/70 p-0"
+                contentClassName="flex h-full flex-col gap-5 p-6"
+                spotlightTone={solution.tone}
+                spotlightRadius={320}
+                spotlightOpacity={0.16}
+              >
+                <Card className="border-0 bg-transparent shadow-none">
+                  <div
+                    data-reveal
+                    className="flex h-12 w-12 items-center justify-center rounded-2xl border border-border bg-background/80 text-primary"
+                  >
+                    <Icon className="h-5 w-5" />
+                  </div>
+                  <div className="mt-6 flex items-center justify-between gap-3">
+                    <h3 data-reveal className="text-xl font-semibold text-foreground">
+                      {solution.title}
+                    </h3>
+                    <span className="text-xs uppercase tracking-[0.26em] text-foreground/50">
+                      0{index + 1}
+                    </span>
+                  </div>
+                  <p data-reveal className="mt-3 text-sm leading-7 text-foreground/70">
+                    {solution.description}
+                  </p>
+                </Card>
+              </SpotlightCard>
+            );
+          })}
+        </div>
+      </div>
+
+      <div className="mx-auto mt-14 grid w-full max-w-7xl gap-4 md:grid-cols-3">
+        {[
+          "Arquitectura y performance",
+          "Diseno centrado en conversion",
+          "Soporte continuo y evolutivo",
+        ].map((item) => (
+          <div
+            key={item}
+            data-reveal
+            className="rounded-2xl border border-border bg-surface/70 px-5 py-4 text-sm font-medium text-foreground backdrop-blur-md"
+          >
+            <Layers3 className="mb-3 h-4 w-4 text-primary" />
+            {item}
+          </div>
+        ))}
+      </div>
+    </section>
+  );
 }

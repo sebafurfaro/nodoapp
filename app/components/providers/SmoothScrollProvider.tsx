@@ -14,10 +14,10 @@ export function SmoothScrollProvider({
     <ReactLenis
       root
       options={{
-        lerp: 0.08,
+        lerp: 0.085,
         smoothWheel: true,
         anchors: {
-          offset: 96,
+          offset: 112,
         },
       }}
     >
