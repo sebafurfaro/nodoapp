@@ -1,10 +1,11 @@
 "use client";
 
-import { Button, Switch } from "@heroui/react";
+import { Button } from "@heroui/react";
 import { Menu, MoonStar, SunMedium, X } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useSiteTheme } from "../providers/ThemeProvider";
+import { ThemeSwitch } from "../ui/ThemeSwitch";
 import { twMerge } from "tailwind-merge";
 
 const MENU_ITEMS = [
@@ -44,6 +45,10 @@ export function Header() {
   }, [menuOpen]);
 
   return (
+    <>
+    <div className="hidden md:flex fixed bottom-8 right-5 z-50 border-1 border-white/20 dark:border-black/20 bg-surface/80 w-10 h-10 items-center justify-center rounded-full cursor-pointer shadow-[0_24px_80px_-32px_rgba(0,0,0,0.8)] backdrop-blur-xl supports-[backdrop-filter]:bg-surface/70">
+        <ThemeSwitch />
+    </div>    
     <header className="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-5">
       <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-3 rounded-[1.5rem] border border-border bg-surface/80 px-4 py-3 text-foreground shadow-[0_24px_80px_-32px_rgba(0,0,0,0.8)] backdrop-blur-xl supports-[backdrop-filter]:bg-surface/70">
         <Link
@@ -51,14 +56,8 @@ export function Header() {
           className="group flex items-center gap-3 rounded-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
           aria-label="Ir al inicio de NodoApp"
         >
-          <span className="flex h-10 w-10 items-center justify-center rounded-2xl border border-primary/30 bg-primary/10 text-sm font-semibold text-primary shadow-[0_0_0_1px_rgba(34,211,238,0.08)]">
-            N
-          </span>
-          <span className="flex flex-col leading-tight">
-            <span className="text-sm font-semibold tracking-[0.32em] text-foreground">
-              NODOAPP
-            </span>
-            <span className="text-xs text-foreground/70">Tecnologia en movimiento</span>
+          <span className="flex leading-tight">
+            <span className="text-base font-bold text-foreground uppercase">Nodo App</span>
           </span>
         </Link>
 
@@ -78,25 +77,9 @@ export function Header() {
         </nav>
 
         <div className="hidden items-center gap-2 md:flex">
-          <Switch
-            isSelected={resolvedTheme === "dark"}
-            onChange={toggleTheme}
-            aria-label="Cambiar tema visual"
-            className="shrink-0"
-          >
-            <Switch.Content className="gap-2 text-sm font-medium text-foreground">
-              <span aria-hidden="true" className="flex items-center gap-2">
-                {resolvedTheme === "dark" ? (
-                  <MoonStar className="h-4 w-4" />
-                ) : (
-                  <SunMedium className="h-4 w-4" />
-                )}
-              </span>
-            </Switch.Content>
-            <Switch.Control className="border border-border bg-surface-muted">
-              <Switch.Thumb className="bg-background" />
-            </Switch.Control>
-          </Switch>
+          <div className="block md:hidden">
+            <ThemeSwitch />
+          </div>
 
           <Link
             href="#contacto"
@@ -137,7 +120,7 @@ export function Header() {
         </div>
       </div>
 
-        <div
+      <div
         id="mobile-navigation"
         className={twMerge(
           "mx-auto mt-2 w-full max-w-7xl overflow-hidden rounded-[1.25rem] border border-border bg-surface/95 px-4 shadow-[0_24px_80px_-32px_rgba(0,0,0,0.8)] backdrop-blur-xl transition-all duration-300 md:hidden",
@@ -167,5 +150,6 @@ export function Header() {
         </nav>
       </div>
     </header>
+    </>
   );
 }

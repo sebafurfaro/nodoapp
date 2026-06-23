@@ -29,7 +29,7 @@ const CONTENT: Record<
     eyebrow: "Desarrollo Personalizado",
     title: "Productos hechos a medida para procesos que no entran en plantillas.",
     description:
-      "Construimos plataformas, dashboards y experiencias operativas pensadas para escalar con la logica de tu negocio.",
+      "Construimos plataformas, dashboards y experiencias operativas pensadas para escalar con la lógica de tu negocio.",
     points: [
       "Arquitectura modular y mantenible.",
       "Integraciones con sistemas internos y externos.",
@@ -39,13 +39,13 @@ const CONTENT: Record<
   },
   ecommerce: {
     eyebrow: "eCommerce",
-    title: "Tiendas y catálogos con foco en conversion, velocidad y confianza.",
+    title: "Tiendas y catálogos con foco en conversión, velocidad y confianza.",
     description:
-      "Diseñamos recorridos de compra limpios, estables y orientados a la decision del usuario en cada punto.",
+      "Diseñamos sistemas de venta/compra limpios, estables y orientados a la decisión del usuario en cada punto.",
     points: [
       "Home comercial, PDP y checkout optimizados.",
-      "Bundles, promociones y catalogos vivos.",
-      "Base preparada para SEO y analitica.",
+      "Bundles, promociones y catálogos vivos.",
+      "Base preparada para SEO y analítica.",
     ],
     icon: Globe2,
   },
@@ -57,7 +57,7 @@ const CONTENT: Record<
     points: [
       "Estructura clara para trámites y seguimiento.",
       "Mensajes formales, confiables y concretos.",
-      "Diseño visual sobrio con un toque tecnologico.",
+      "Diseño visual sobrio con un toque tecnológico.",
     ],
     icon: Palette,
   },
@@ -65,10 +65,10 @@ const CONTENT: Record<
     eyebrow: "Blogs",
     title: "Contenido editorial pensado para posicionar y construir autoridad.",
     description:
-      "Creamos espacios de blog con lectura fluida, jerarquia tipografica y rendimiento para publicar de forma constante.",
+      "Creamos espacios de blog con lectura fluida, jerarquía tipográfica y rendimiento para publicar de forma constante.",
     points: [
       "Plantillas listas para redactar y publicar.",
-      "SEO tecnico y estructura semántica.",
+      "SEO técnico y estructura semántica.",
       "Imagen editorial alineada a la marca.",
     ],
     icon: Type,
@@ -101,18 +101,21 @@ export function Ecosystem() {
     >
       <div className="mx-auto flex w-full max-w-7xl flex-col gap-10 lg:grid lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
         <div className="space-y-5">
-          <Badge className="rounded-full border border-border bg-surface/70 px-4 py-2 text-xs font-semibold uppercase tracking-[0.28em] text-foreground">
+          <p
+            data-reveal
+            className="inline-flex rounded-full border border-border bg-surface/70 px-4 py-2 text-xs font-semibold uppercase tracking-[0.28em] text-foreground/70"
+          >
             Ecosistema
-          </Badge>
+          </p>
           <h2
             ref={titleRef}
             className="text-3xl font-bold tracking-[-0.04em] text-foreground sm:text-4xl lg:text-5xl"
           >
-            Una experiencia unificada para producto, marca y tecnologia.
+            Una experiencia unificada para producto, marca y tecnología.
           </h2>
-          <p data-reveal className="max-w-xl text-base leading-7 text-foreground/70">
+          <p data-reveal className="max-w-xl text-base leading-7 text-foreground/70 ff-saira">
             NodoApp no se limita a entregar pantallas. Construimos un sistema
-            visual y tecnico que alinea negocio, operacion y experiencia de usuario.
+            visual y técnico que alinea negocio, operación y experiencia de usuario.
           </p>
           <a
             href="#contacto"

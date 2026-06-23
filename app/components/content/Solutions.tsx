@@ -17,14 +17,14 @@ const SOLUTIONS = [
   {
     title: "Desarrollo a medida",
     description:
-      "Creamos productos digitales pensados para resolver problemas reales con una base tecnica solida y sostenible.",
+      "Creamos productos digitales pensados para resolver problemas reales con una base técnica sólida y sostenible.",
     icon: Code2,
     tone: "cyan" as const,
   },
   {
     title: "Interfaces de alto impacto",
     description:
-      "Diseno visual moderno, accesible y enfocado en conversion, claridad y consistencia de marca.",
+      "Diseño visual moderno, accesible y enfocado en conversión, claridad y consistencia de marca.",
     icon: Sparkles,
     tone: "violet" as const,
   },
@@ -36,9 +36,9 @@ const SOLUTIONS = [
     tone: "rose" as const,
   },
   {
-    title: "Consultoria y resguardo",
+    title: "Consultoría y resguardo",
     description:
-      "Acompanamos decisiones de producto, tecnologia y seguridad para cuidar cada etapa del proceso.",
+      "Acompañamos decisiones de producto, tecnología y seguridad para cuidar cada etapa del proceso.",
     icon: ShieldCheck,
     tone: "amber" as const,
   },
@@ -73,13 +73,13 @@ export function Solutions() {
             ref={titleRef}
             className="max-w-xl text-3xl font-bold tracking-[-0.04em] text-foreground sm:text-4xl lg:text-5xl"
           >
-            Un ecosistema de servicios que acompana desde la idea hasta la
-            ejecucion.
+            Un ecosistema de servicios que acompaña desde la idea hasta la
+            ejecución.
           </h2>
-          <p data-reveal className="max-w-xl text-base leading-7 text-foreground/70">
+          <p data-reveal className="max-w-xl text-base leading-7 text-foreground/70 ff-saira">
             La experiencia de NodoApp se construye sobre una mezcla de estrategia,
-            diseno y desarrollo. Cada pieza esta pensada para que el producto
-            final se sienta rapido, claro y confiable.
+            diseño y desarrollo. Cada pieza esta pensada para que el producto
+            final se sienta rápido, claro y confiable.
           </p>
         </div>
 
@@ -111,7 +111,7 @@ export function Solutions() {
                       0{index + 1}
                     </span>
                   </div>
-                  <p data-reveal className="mt-3 text-sm leading-7 text-foreground/70">
+                  <p data-reveal className="mt-3 text-sm leading-7 text-foreground/70 ff-saira">
                     {solution.description}
                   </p>
                 </Card>
@@ -124,7 +124,7 @@ export function Solutions() {
       <div className="mx-auto mt-14 grid w-full max-w-7xl gap-4 md:grid-cols-3">
         {[
           "Arquitectura y performance",
-          "Diseno centrado en conversion",
+          "Diseño centrado en conversión",
           "Soporte continuo y evolutivo",
         ].map((item) => (
           <div

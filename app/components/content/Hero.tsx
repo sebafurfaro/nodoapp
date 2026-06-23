@@ -15,9 +15,9 @@ import { twMerge } from "tailwind-merge";
 import { useSplitTextReveal } from "../ui/useSplitTextReveal";
 
 const HERO_METRICS = [
-  { value: "12+", label: "Anios de experiencia digital" },
+  { value: "12+", label: "Años de experiencia digital" },
   { value: "98%", label: "Proyectos entregados con foco en rendimiento" },
-  { value: "24/7", label: "Monitoreo y acompanamiento operativo" },
+  { value: "24/7", label: "Monitoreo y acompañamiento operativo" },
 ];
 
 function prefersReducedMotion() {
@@ -142,11 +142,11 @@ export function Hero() {
       />
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(148,163,184,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(148,163,184,0.12)_1px,transparent_1px)] bg-[size:72px_72px] opacity-60 [mask-image:radial-gradient(circle_at_center,black,transparent_78%)]" />
 
-      <div className="relative mx-auto grid w-full max-w-7xl gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
-        <div className="max-w-3xl">
+      <div className="relative mx-auto w-full max-w-7xl gap-12">
+        <div className="max-w-3xl flex items-center flex-col mx-auto">
           <h1
             ref={headingRef}
-            className="mt-6 text-balance text-4xl font-black tracking-[-0.05em] text-foreground sm:text-5xl lg:text-7xl"
+            className="mt-6 text-balance text-4xl text-center font-black tracking-[-0.05em] text-foreground sm:text-5xl lg:text-7xl"
           >
             {headline.map((line, index) => (
               <span
@@ -166,11 +166,11 @@ export function Hero() {
 
           <p
             ref={copyRef}
-            className="mt-6 max-w-2xl text-base leading-7 text-foreground/70 sm:text-lg"
+            className="mt-6 max-w-3xl text-base leading-7 text-foreground/70 sm:text-lg text-center ff-saira"
           >
             Construimos experiencias digitales modernas para empresas que quieren
-            verse y sentirse futuras. Diseno de interfaces, desarrollo web y
-            estrategia de producto en una misma direccion.
+            verse y sentirse futuras. Diseño de interfaces, desarrollo web y
+            estrategia de producto en una misma dirección.
           </p>
 
           <div
@@ -212,7 +212,7 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="relative" style={{ perspective: "1200px" }}>
+        <div className="hidden" style={{ perspective: "1200px" }}>
           <div
             aria-hidden="true"
             className="absolute inset-0 -z-10 rounded-[2rem] bg-[radial-gradient(circle_at_center,_rgba(34,211,238,0.14),_transparent_55%)] blur-3xl"
