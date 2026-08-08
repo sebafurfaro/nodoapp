@@ -1,6 +1,6 @@
 import { Contact } from "./components/content/Contact";
-import { Ecosystem } from "./components/content/Ecosystem";
 import { Hero } from "./components/content/Hero";
+import { Process } from "./components/content/Process";
 import { Solutions } from "./components/content/Solutions";
 
 export default function Home() {
@@ -8,7 +8,7 @@ export default function Home() {
     <>
       <Hero />
       <Solutions />
-      <Ecosystem />
+      <Process />
       <Contact />
     </>
   );

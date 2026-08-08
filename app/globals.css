@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "lenis/dist/lenis.css";
 
 :root {
   --background: #ffffff;
@@ -10,6 +11,10 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-bebas: var(--font-bebas-neue);
+  --font-google: var(--font-google-sans-flex);
+  --font-marker: var(--font-permanent-marker);
+  --font-gochi: var(--font-gochi-hand);
 }
 
 @media (prefers-color-scheme: dark) {

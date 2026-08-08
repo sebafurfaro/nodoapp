@@ -1,0 +1,5 @@
+export function RecursosPage() {
+    return(
+        <></>
+    )
+}
